@@ -1,7 +1,18 @@
-const Edit = () => {
-  return (
-    <div>page</div>
-  )
-}
+import Header from "../components/Header";
+import InputForm from "../components/inputForm";
 
-export default Edit
+const AppliedCompanyEdit = () => {
+  return (
+    <div>
+      <Header />
+      <section>
+        <div className="flex flex-col items-center justify-center p-4">
+          <h1 className="text-2xl font-bold mb-4">Add Applied Company</h1>
+          <InputForm />
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default AppliedCompanyEdit;

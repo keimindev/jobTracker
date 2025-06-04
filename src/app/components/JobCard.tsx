@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 type CompanyProps = {
@@ -17,7 +18,7 @@ type CompanyProps = {
 
 const JobCard = ({company} : CompanyProps) => {
   return (
-    <div
+    <Link href={`/${company.id}`}><div
       key={company.id}
       className="border-1 border-gray-200 p-2 rounded-lg m-1 cursor-pointer hover:bg-gray-100 transition-all duration-200"
     >
@@ -32,6 +33,7 @@ const JobCard = ({company} : CompanyProps) => {
         <p>{company.appliedDate}</p>
       </div>
     </div>
+    </Link>
   );
 };
 

@@ -1,7 +1,8 @@
 import { dummyData } from "@/utils/dummydata";
-import { Filter } from "./components/Filter";
+
 import Header from "./components/Header";
 import JobCard from "./components/JobCard";
+import { Filter } from "./components/Filter";
 
 export default function Home() {
   return (
@@ -12,10 +13,10 @@ export default function Home() {
           <Filter />
         </section>
         <section className="p-4">
-          {dummyData.appliedCompany.map((company) =>{
+          {dummyData.appliedCompany.map((company) => {
             return (
-              <JobCard key={company.id} company={company} />
-            )
+                <JobCard key={company.id} company={company} />
+            );
           })}
         </section>
       </main>
