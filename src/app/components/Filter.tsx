@@ -7,7 +7,7 @@ import { FaArrowUpShortWide, FaArrowUpWideShort } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 
 export const Filter = () => {
-  const [grid, setGrid] = useState("grid");
+  const [grid, setGrid] = useState("list");
   const [order, setOrder] = useState("ascending");
 
   const handleFilterChange = (grid: string) => {

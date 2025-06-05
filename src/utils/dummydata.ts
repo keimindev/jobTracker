@@ -3,8 +3,6 @@ export const dummyData = {
     {
       id: 1,
       name: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      industry: "Technology",
       position: "backend developer",
       appliedDate: "2024.05.23",
       status: "On Hold",
@@ -14,8 +12,6 @@ export const dummyData = {
     {
       id: 2,
       name: "Green Solutions Ltd.",
-      location: "Austin, TX",
-      industry: "Environmental Services",
       position: "frontend developer",
       appliedDate: "2024.06.01",
       status: "Interviewing",
@@ -25,8 +21,6 @@ export const dummyData = {
     {
       id: 3,
       name: "HealthCare Systems",
-      location: "New York, NY",
-      industry: "Healthcare",
       position: "full stack developer",
       appliedDate: "2024.06.15",
       status: "Offer Accepted",

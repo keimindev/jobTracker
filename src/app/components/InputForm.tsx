@@ -29,7 +29,6 @@ const InputForm = () => {
 
   const handleStatusChange = (newStatus: string) => {
     setStatus(newStatus);
-    // 필요하다면 여기서 서버로 업데이트 API 호출 가능
   };
 
   return (

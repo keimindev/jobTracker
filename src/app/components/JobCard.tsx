@@ -5,8 +5,6 @@ type CompanyProps = {
   company: {
     id: number;
     name: string;
-    location: string;
-    industry: string;
     position: string;
     appliedDate: string;
     status: string;
