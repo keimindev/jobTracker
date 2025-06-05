@@ -1,55 +1,62 @@
 "use client";
 
 import { filterOptions } from "@/utils/dummydata";
-import { useState } from "react";
 import { FaThList } from "react-icons/fa";
-import { FaArrowUpShortWide, FaArrowUpWideShort } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
+import { useAppliedCompanyStore } from "../store/appliedCompanyStore";
+import {
+  TbSortAscendingNumbers,
+  TbSortDescendingNumbers,
+} from "react-icons/tb";
 
 export const Filter = () => {
-  const [grid, setGrid] = useState("list");
-  const [order, setOrder] = useState("ascending");
+  const { orderBy, order, view, setView } = useAppliedCompanyStore();
 
-  const handleFilterChange = (grid: string) => {
-    setGrid(grid);
-  };
-  const handleOrderChange = (order: string) => {
-    setOrder(order);
-  };
   return (
     <div className="flex flex-row items-center justify-between">
       <ul className="w-[70%] flex flex-row items-center gap-2 p-2">
         {filterOptions.map((option: string) => {
-          return <li key={option} className="bg-blue-200 px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-300">{option}</li>;
+          return (
+            <li
+              key={option}
+              className="bg-blue-200 px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-300"
+            >
+              {option}
+            </li>
+          );
         })}
       </ul>
       <ul className="w-[10%] flex flex-row items-center gap-2 p-2">
         {order === "ascending" ? (
           <li
             className="cursor-pointer"
-            onClick={() => handleOrderChange("descending")}
+            onClick={() => {
+              orderBy("descending");
+            }}
           >
-            <FaArrowUpWideShort />
+            <TbSortAscendingNumbers />
           </li>
         ) : (
           <li
             className="cursor-pointer"
-            onClick={() => handleOrderChange("ascending")}
+            onClick={() => {
+              orderBy("ascending");
+            }}
           >
-            <FaArrowUpShortWide />
+            <TbSortDescendingNumbers />
           </li>
         )}
-        {grid === "list" ? (
+        {view === "list" ? (
           <li
-            className="cursor-pointer"
-            onClick={() => handleFilterChange("grid")}
+            className="cursor-pointer hidden sm:block"
+            onClick={() => setView("grid")}
           >
             <FaThList />
           </li>
         ) : (
           <li
-            className="cursor-pointer"
-            onClick={() => handleFilterChange("list")}
+            className="cursor-pointer hidden sm:block"
+            onClick={() => setView("list")}
           >
             <IoGrid />
           </li>
