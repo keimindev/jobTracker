@@ -1,31 +1,12 @@
 "use client"
 
-import { filterOptions } from "@/utils/dummydata";
 import { useState } from "react";
+import Dropdown from "./Dropdown";
 
-type StatusDropdownProps = {
-  status: string;
-  onChange: (newStatus: string) => void;
-};
 
 const InputForm = () => {
   const [status, setStatus] = useState("applied");
-  
-  const StatusDropdown = ({ status, onChange }: StatusDropdownProps) => {
-    return (
-      <select
-        value={status}
-        onChange={(e) => onChange(e.target.value)}
-        className="p-2 border rounded"
-      >
-        {filterOptions.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    );
-  };
+
 
   const handleStatusChange = (newStatus: string) => {
     setStatus(newStatus);
@@ -82,7 +63,7 @@ const InputForm = () => {
           >
             Status
           </label>
-          <StatusDropdown status={status} onChange={handleStatusChange} />
+          <Dropdown status={status} onChange={handleStatusChange} />
         </div>
         <div className="mb-4">
           <label

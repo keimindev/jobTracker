@@ -8,24 +8,34 @@ import {
   TbSortAscendingNumbers,
   TbSortDescendingNumbers,
 } from "react-icons/tb";
+import Dropdown from "./Dropdown";
+import { useFilterStore } from "../store/filterStore";
 
 export const Filter = () => {
-  const { orderBy, order, view, setView } = useAppliedCompanyStore();
+  const { orderBy, order, view, setView} = useAppliedCompanyStore();
+  const { status, setStatus } = useFilterStore();
 
   return (
     <div className="flex flex-row items-center justify-between">
-      <ul className="w-[70%] flex flex-row items-center gap-2 p-2">
+      <ul className="hidden md:flex w-[70%] flex flex-row items-center gap-2 p-2">
         {filterOptions.map((option: string) => {
+          const isSelected = option === status;
           return (
             <li
               key={option}
-              className="bg-blue-200 px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-300"
+              className={`px-2 py-1 rounded-lg cursor-pointer 
+              ${isSelected ? 'bg-blue-400 text-white' : 'bg-blue-200 hover:bg-blue-300'}`}
+              onClick={() => { setStatus(option);
+              }}
             >
               {option}
             </li>
           );
         })}
       </ul>
+      <div className="md:hidden px-2">
+        <Dropdown/>
+      </div>
       <ul className="w-[10%] flex flex-row items-center gap-2 p-2">
         {order === "ascending" ? (
           <li
