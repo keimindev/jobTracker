@@ -1,17 +1,9 @@
 "use client"
 
-import { useState } from "react";
 import Dropdown from "./Dropdown";
 
 
 const InputForm = () => {
-  const [status, setStatus] = useState("applied");
-
-
-  const handleStatusChange = (newStatus: string) => {
-    setStatus(newStatus);
-  };
-
   return (
     <>
       <form className="w-full max-w-md">
@@ -63,7 +55,7 @@ const InputForm = () => {
           >
             Status
           </label>
-          <Dropdown status={status} onChange={handleStatusChange} />
+          <Dropdown />
         </div>
         <div className="mb-4">
           <label

@@ -1,18 +1,14 @@
 "use client";
 
 import { filterOptions } from "@/utils/dummydata";
-import { FaThList } from "react-icons/fa";
+import { FaSortAmountDownAlt, FaSortAmountUp, FaThList } from "react-icons/fa";
 import { IoGrid } from "react-icons/io5";
 import { useAppliedCompanyStore } from "../store/appliedCompanyStore";
-import {
-  TbSortAscendingNumbers,
-  TbSortDescendingNumbers,
-} from "react-icons/tb";
 import Dropdown from "./Dropdown";
 import { useFilterStore } from "../store/filterStore";
 
 export const Filter = () => {
-  const { orderBy, order, view, setView} = useAppliedCompanyStore();
+  const { orderBy, order, view, setView } = useAppliedCompanyStore();
   const { status, setStatus } = useFilterStore();
 
   return (
@@ -24,8 +20,13 @@ export const Filter = () => {
             <li
               key={option}
               className={`px-2 py-1 rounded-lg cursor-pointer 
-              ${isSelected ? 'bg-blue-400 text-white' : 'bg-blue-200 hover:bg-blue-300'}`}
-              onClick={() => { setStatus(option);
+              ${
+                isSelected
+                  ? "bg-blue-400 text-white"
+                  : "bg-blue-200 hover:bg-blue-300"
+              }`}
+              onClick={() => {
+                setStatus(option);
               }}
             >
               {option}
@@ -34,7 +35,7 @@ export const Filter = () => {
         })}
       </ul>
       <div className="md:hidden px-2">
-        <Dropdown/>
+        <Dropdown />
       </div>
       <ul className="w-[10%] flex flex-row items-center gap-2 p-2">
         {order === "ascending" ? (
@@ -44,7 +45,7 @@ export const Filter = () => {
               orderBy("descending");
             }}
           >
-            <TbSortAscendingNumbers />
+            <FaSortAmountUp />
           </li>
         ) : (
           <li
@@ -53,7 +54,7 @@ export const Filter = () => {
               orderBy("ascending");
             }}
           >
-            <TbSortDescendingNumbers />
+            <FaSortAmountDownAlt />
           </li>
         )}
         {view === "list" ? (
