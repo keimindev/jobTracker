@@ -13,7 +13,7 @@ export const Filter = () => {
 
   return (
     <div className="flex flex-row items-center justify-between">
-      <ul className="hidden md:flex w-[70%] flex flex-row items-center gap-2 p-2">
+      <ul className="hidden md:flex w-[80%] flex flex-row items-center gap-2 p-2">
         {filterOptions.map((option: string) => {
           const isSelected = option === status;
           return (
@@ -35,9 +35,10 @@ export const Filter = () => {
         })}
       </ul>
       <div className="md:hidden px-2">
-        <Dropdown />
+        <Dropdown status={"All"}/>
       </div>
-      <ul className="w-[10%] flex flex-row items-center gap-2 p-2">
+      <div className="w-[210px] md:w-[240px] flex flex-row items-center justify-between">
+      <ul className="flex flex-row items-center gap-2 ">
         {order === "ascending" ? (
           <li
             className="cursor-pointer"
@@ -77,8 +78,9 @@ export const Filter = () => {
         <input
           type="text"
           placeholder="Search"
-          className="border-1 border-gray-300 rounded-lg p-2 w-full"
+          className="w-[220px] border-1 border-gray-300 rounded-lg p-2 w-full outline-none"
         />
+      </div>
       </div>
     </div>
   );
