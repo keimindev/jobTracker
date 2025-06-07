@@ -9,7 +9,7 @@ const Add = () => {
       <section>
         <div className="flex flex-col items-center justify-center p-4">
           <h1 className="text-2xl font-bold mb-4">Add Applied Company</h1>
-          <InputForm />
+          <InputForm initialStatus="All" />
         </div>
       </section>
     </div>

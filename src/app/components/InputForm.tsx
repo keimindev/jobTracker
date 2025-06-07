@@ -1,9 +1,12 @@
-"use client"
-
 import Dropdown from "./Dropdown";
 
 
-const InputForm = () => {
+type InputFormProps = {
+  initialStatus: string;
+};
+
+
+const InputForm = ({ initialStatus }: InputFormProps) => {
   return (
     <>
       <form className="w-full max-w-md">
@@ -55,7 +58,7 @@ const InputForm = () => {
           >
             Status
           </label>
-          <Dropdown />
+          <Dropdown status = {initialStatus}/>
         </div>
         <div className="mb-4">
           <label

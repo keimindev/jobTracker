@@ -2,8 +2,12 @@ import { filterOptions } from "@/utils/dummydata";
 import { useFilterStore } from "../store/filterStore";
 
 
-const Dropdown = () => {
- const { status, setStatus } = useFilterStore();
+type StatusProps = {
+  status: string;
+};
+
+const Dropdown = ({status} : StatusProps) => {
+ const { setStatus } = useFilterStore();
   
  return (
       <select
