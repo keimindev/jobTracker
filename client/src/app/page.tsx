@@ -4,10 +4,22 @@ import Header from "./components/Header";
 import JobCard from "./components/JobCard";
 import { Filter } from "./components/Filter";
 import { useAppliedCompanyStore } from "./store/appliedCompanyStore";
+import { supabase } from "src/lib/supabase";
+import { useEffect } from "react";
 
 export default function Home() {
   const { appliedCompanies, view } = useAppliedCompanyStore();
 
+  const getUser = async () => {
+    const { data } = await supabase.auth.getUser();
+    console.log("User data:", data);
+  }
+
+  useEffect(() =>{
+    getUser();
+  })
+
+  
   return (
     <div className="p-2">
       <Header />

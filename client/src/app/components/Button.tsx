@@ -3,11 +3,13 @@ import React from "react";
 type ButtonNameProps = {
   buttonName: string;
   size?: "small" | "medium" | "large";
+  onClick?: () => void;
 };
 
-const Button = ({ buttonName , size}: ButtonNameProps) => {
+const Button = ({ buttonName, size, onClick }: ButtonNameProps) => {
   return (
     <button
+      onClick={onClick}
       type="submit"
       className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full 
       ${
