@@ -1,4 +1,4 @@
-import { dummyData } from "../../utils/dummydata";
+import { dummyData } from "../utils/dummydata";
 import { create } from "zustand";
 
 export interface AppliedCompany {

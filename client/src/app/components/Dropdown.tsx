@@ -1,6 +1,6 @@
 "use client" 
 
-import { filterOptions } from "../../utils/dummydata";
+import { filterOptions } from "../utils/dummydata";
 import { useFilterStore } from "../store/filterStore";
 
 

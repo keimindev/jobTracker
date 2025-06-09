@@ -1,6 +1,6 @@
 "use client";
 
-import { filterOptions } from "../../utils/dummydata";
+import { filterOptions } from "../utils/dummydata";
 import { FaSortAmountDownAlt, FaSortAmountUp, FaThList } from "react-icons/fa";
 import { IoGrid } from "react-icons/io5";
 import { useAppliedCompanyStore } from "../store/appliedCompanyStore";
