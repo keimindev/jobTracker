@@ -26,5 +26,5 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     return () => subscription.unsubscribe();
   }, [setUser]);
 
-  return <>{children}</>;
+  return children
 }
