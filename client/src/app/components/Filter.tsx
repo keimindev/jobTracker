@@ -3,9 +3,9 @@
 import { filterOptions } from "../utils/dummydata";
 import { FaSortAmountDownAlt, FaSortAmountUp, FaThList } from "react-icons/fa";
 import { IoGrid } from "react-icons/io5";
-import { useAppliedCompanyStore } from "../store/appliedCompanyStore";
+import { useAppliedCompanyStore } from "src/store/appliedCompanyStore";
 import Dropdown from "./Dropdown";
-import { useFilterStore } from "../store/filterStore";
+import { useFilterStore } from "src/store/filterStore";
 
 export const Filter = () => {
   const { orderBy, order, view, setView } = useAppliedCompanyStore();
