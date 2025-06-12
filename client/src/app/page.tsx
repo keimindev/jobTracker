@@ -3,7 +3,7 @@
 import Header from "./components/Header";
 import JobCard from "./components/JobCard";
 import { Filter } from "./components/Filter";
-import { useAppliedCompanyStore } from "./store/appliedCompanyStore";
+import { useAppliedCompanyStore } from "../store/appliedCompanyStore";
 
 export default function Home() {
   const { appliedCompanies, view } = useAppliedCompanyStore();

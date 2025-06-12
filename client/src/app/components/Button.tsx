@@ -1,15 +1,19 @@
 import React from "react";
 
 type ButtonNameProps = {
-  buttonName: string;
+  children?: React.ReactNode;
   size?: "small" | "medium" | "large";
+  onClick?: () => void;
+  color?: string;
 };
 
-const Button = ({ buttonName , size}: ButtonNameProps) => {
+const Button = ({ children, size, onClick, color }: ButtonNameProps) => {
+  color = color || "blue"; // Default color is blu
   return (
     <button
+      onClick={onClick}
       type="submit"
-      className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full 
+      className={`bg-${color}-500 hover:bg-${color}-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full 
       ${
         size === "medium"
           ? "md:w-[200px] max-w-md"
@@ -18,7 +22,7 @@ const Button = ({ buttonName , size}: ButtonNameProps) => {
           : "md:w-[150px] max-w-md"
       }`}
     >
-      {buttonName}
+      {children}
     </button>
   );
 };
